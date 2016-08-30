@@ -1,0 +1,16 @@
+<div id='container'>
+  <nav class='navigation'>
+    <ul>
+      <li>
+        <a href='#/movies'>Movie Ideas</a>
+      </li>
+      <li>
+        <a href='#/saved'>Saved</a>
+      </li>
+    </ul>
+  </nav>
+  <ul id='savedList'>
+    <li ng-repeat='saved in data.saved' ng-model='saved'> {{ saved.title }}
+    </li>
+  </ul>
+</div>

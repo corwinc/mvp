@@ -1,0 +1,28 @@
+{
+  "name": "movie-generator",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corwinc/2016-07-mvp.git"
+  },
+  "author": "Corwin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corwinc/2016-07-mvp/issues"
+  },
+  "homepage": "https://github.com/corwinc/2016-07-mvp#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "jquery": "^3.1.0",
+    "jwt-simple": "^0.5.0",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.10.2",
+    "request": "^2.74.0"
+  }
+}
