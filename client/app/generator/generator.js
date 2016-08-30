@@ -1,6 +1,6 @@
 angular.module('roxbury.movies', [])
 
-.controller('MoviesController', function ($scope) {
+.controller('MoviesController', function ($scope, $http) {
 
   $scope.data = {};
 
@@ -52,13 +52,21 @@ angular.module('roxbury.movies', [])
   $scope.getMovies = function() {
     console.log('get movies!');
     return $scope.data.movies;
-    // later: query database given specific search parameters e.g. mood
+    // return $http({
+    //   method: 'GET',
+    //   url: '/server/movies'
+    // });
   };
 
   $scope.saveMovie = function(movie) {
     // add to database - saved
-    console.log('saved movie!');
-  }
+    console.log('saved movie!', movie);
+    return $http({
+      method: 'POST',
+      url: '/server/movies',
+      data: movie // stringify?
+    })
+  };
 
   $scope.getMovies();
 

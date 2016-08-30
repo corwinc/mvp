@@ -1,22 +1,36 @@
 var express = require('express');
 var path = require('path');
-// bookshelf?
+var mongoose = require('mongoose');
+var movieController = require('./movies/movieController.js');
+var morgan = require('morgan');
+var bodyParser = require('body-parser');
+// require mongoose here?
 
 var app = express();
 
-// require('.config/middleware.js')(app, express);
-// require('.config/routes.js')(app, express);
+mongoose.connect('mongodb://localhost/roxbury');
 
-// app.get('/', function(req, res) {
-//   res.send('Hello World!')
-// });
 
-// app.get('/', function(req, res) {
-//   res.render('../client/index.html')
-// })
+mongoose.connection.on('connected', function() {
+  console.log('mongoose connection is open');
+});
+mongoose.connection.on('error', function(err) {
+  console.log('mongoose connection error: ', err);
+})
+
+app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
+
+/////////  ROUTES  /////////
+app.get('/server/movies', movieController.savedMovies); // what about loading the view?
+app.post('/server/movies', movieController.toggleSave);
+// app.get('server/saved', movieController.savedMovies);
 
 app.use(express.static(path.join(__dirname, '../client')));
 
+
+//////// INITIALIZE SERVER ////////
 app.listen(3000, function() {
   console.log('FIRE ZE MISSILES!!!');
 });
