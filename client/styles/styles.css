@@ -1,3 +1,52 @@
+.moviesList {
+  margin: 30px;
+}
+
+.movie-container {
+  margin-bottom: 30px;
+}
+
+.movie-title {
+  font-weight: bold;
+}
+
+.movie-poster {
+  width: 100px;
+/*  float: left;*/
+}
+
+.movie-poster:hover {
+
+}
+
+.save-button {
+  float: right;
+}
+
+.movie-data {
+  /*  float: right;*/
+}
+
 ul {
   list-style-type: none;
+} 
+
+h1.title {
+  margin-left: 30px;
+}
+
+.navbar-brand {
+
+}
+
+.navbar-fixed-top {
+
+}
+
+.container {
+
+}
+
+.container-fluid {
+
 }

@@ -50,9 +50,15 @@ angular.module('roxbury.movies', [])
   ];
 
   $scope.getMovies = function() {
+    console.log('get movies!');
     return $scope.data.movies;
     // later: query database given specific search parameters e.g. mood
   };
+
+  $scope.saveMovie = function(movie) {
+    // add to database - saved
+    console.log('saved movie!');
+  }
 
   $scope.getMovies();
 

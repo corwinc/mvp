@@ -1,16 +1,16 @@
 <div id='container'>
-  <nav class='navigation'>
-    <ul>
-      <li>
-        <a href='#/movies'>Movie Ideas</a>
-      </li>
-      <li>
-        <a href='#/saved'>Saved</a>
-      </li>
-    </ul>
-  </nav>
-  <ul id='savedList'>
-    <li ng-repeat='saved in data.saved' ng-model='saved'> {{ saved.title }}
-    </li>
-  </ul>
+  <div class='View'>
+    </div>
+    <div class='moviesList'>
+      <div class='movie-container' ng-repeat='saved in data.saved' ng-model='saved'> 
+        <div>
+          <img class='movie-poster' src='{{saved.poster}}' />
+        </div>
+        <div class='movie-data'>
+          <span class='movie-title'> {{ saved.title }} </span>
+          <span> {{ saved.year }} </span>
+          <span> {{ saved.description }} </span>
+        </div>
+      </div>
+    </div>
 </div>
