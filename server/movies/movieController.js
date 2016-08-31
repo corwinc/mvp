@@ -28,31 +28,35 @@ module.exports = {
 
   toggleSave: function(req, res, next) {
     console.log('toggleSave req.body: ', req.body)
-    var title = req.body.title;
+    // var title = req.body.title;
+    // var year = req.body.year;
+    // var description = req.body.description;
+    // var genre = req.body.genre;
+    // var poster = req.body.poster;
+
+    var title = JSON.stringify(req.body.title);
     var year = req.body.year;
-    var desription = req.body.description;
-    var genre = req.body.genre;
-    var poster = req.body.poster;
+    var description = JSON.stringify(req.body.description);
+    var genre = JSON.stringify(req.body.genre);
+    var poster = JSON.stringify(req.body.poster);
 
     Movie.findOne({title: title})
       .then(function(movie) {
         if (!movie) {
-          console.log('toggleSave: no movie found with that title')
-          Movie.create({
+          console.log('toggleSave: no movie found with that title: ', title);
+          var newMovie = new Movie({
             title: title, 
             year: year,
             description: description,
             genre: genre,
             poster: poster
-          }, function(err, title) {
+          });
+          newMovie.save(function(err) {
             if (err) return handleError(err);
             console.log('error creating movie document');
           })
-          // .then(function() {
-          //   console.log('completed Movie.create');
-          // })
         } else {
-          console.log('toggleSave: movie found, removing movie')
+          console.log('toggleSave: movie found, removing movie');
           Movie.remove({title: movie.title}, function(err) {
             if (err) return handleError(err);
           });

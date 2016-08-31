@@ -8,7 +8,11 @@ var MovieSchema = new mongoose.Schema({
   poster: String
 });
 
-module.exports = mongoose.model('Movie', MovieSchema);
+MovieSchema.pre('save', function(next) {
+  console.log('inside pre-save middleware');
+  next();
+})
 
+var Movie = mongoose.model('Movie', MovieSchema);
 
-// store multiple users to movie schema or create separate table for many/many relationship?
+module.exports = Movie;

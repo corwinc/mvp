@@ -19,8 +19,8 @@ mongoose.connection.on('error', function(err) {
 })
 
 app.use(morgan('dev'));
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 /////////  ROUTES  /////////
 app.get('/server/movies', movieController.savedMovies); // what about loading the view?
