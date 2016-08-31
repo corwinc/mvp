@@ -38,7 +38,7 @@ module.exports = {
       .then(function(movie) {
         if (!movie) {
           console.log('toggleSave: no movie found with that title')
-          return Movie.create({
+          Movie.create({
             title: title, 
             year: year,
             description: description,
@@ -46,13 +46,14 @@ module.exports = {
             poster: poster
           }, function(err, title) {
             if (err) return handleError(err);
+            console.log('error creating movie document');
           })
-          .then(function() {
-            console.log('completed Movie.create');
-          })
+          // .then(function() {
+          //   console.log('completed Movie.create');
+          // })
         } else {
           console.log('toggleSave: movie found, removing movie')
-          return Movie.remove({title: movie.title}, function(err) {
+          Movie.remove({title: movie.title}, function(err) {
             if (err) return handleError(err);
           });
         }

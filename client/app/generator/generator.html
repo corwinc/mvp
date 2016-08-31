@@ -11,17 +11,15 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div id='container'>
-  <div class='movieView'>
-  </div>
   <div class='moviesList'>
     <div class='movie-container' ng-repeat='movie in data.movies' ng-model='movie'> 
-      <div>
+      <div class='movie-poster-container'>
         <img class='movie-poster' src='{{movie.poster}}' />
       </div>
-      <div class='movie-data'>
-        <span class='movie-title'> {{ movie.title }} </span>
-        <span> {{ movie.year }} </span>
-        <span> {{ movie.description }} </span>
+      <div class='movie-data-container'>
+        <div class='movie-data movie-title'> {{ movie.title }} </div>
+        <div class='movie-data'> {{ movie.year }} </div>
+        <div class='movie-data'> {{ movie.description }} </div>
       </div>
       <div class='save-button'>
         <button ng-click='saveMovie(movie)'>Save</button>

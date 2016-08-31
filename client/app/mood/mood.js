@@ -1,6 +1,6 @@
 angular.module('roxbury.mood', [])
 
-.controller('MoodController', function ($scope, $http) {
+.controller('MoodController', function ($scope, $http, $location) {
 
   $scope.data = {};
 
@@ -32,6 +32,10 @@ angular.module('roxbury.mood', [])
       method: 'GET',
       url: '/server/movies'
     })
+  };
+
+  $scope.changeView = function(view) {
+    $location.path(view);
   }
 
 });

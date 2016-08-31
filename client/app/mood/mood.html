@@ -6,7 +6,7 @@
     </div>
     <div class='mood'>
       <label for='moodSelect'> What's your mood? </label><br>
-      <select name='moodSelect' id='moodSelect' ng-model='mood' ng-change="go('/#/movies')">
+      <select name='moodSelect' id='moodSelect' ng-model='mood' ng-change="changeView('movies')">
         <option ng-repeat='mood in data.moods' value='{{ mood }}'>{{mood}}</option>
       </select>
     </div>
