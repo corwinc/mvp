@@ -56,7 +56,11 @@ module.exports = {
             if (err) return handleError(err);
           });
         }
-      });
+      })
+
+      // moodMovies: function(req, res, next) {
+      //   // to do
+      // }
   }
 
 

@@ -1,5 +1,13 @@
+body {
+  background: rgba(0, 0, 255, 0.2);
+}
+
+.mood {
+  margin: 45px;
+}
+
 .moviesList {
-  margin: 30px;
+  margin: 45px;
 }
 
 .movie-container {
@@ -32,7 +40,7 @@ ul {
 } 
 
 h1.title {
-  margin-left: 30px;
+  margin-left: 45px;
 }
 
 .navbar-brand {

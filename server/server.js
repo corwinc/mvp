@@ -25,7 +25,7 @@ app.use(bodyParser.json())
 /////////  ROUTES  /////////
 app.get('/server/movies', movieController.savedMovies); // what about loading the view?
 app.post('/server/movies', movieController.toggleSave);
-// app.get('server/saved', movieController.savedMovies);
+// app.get('server/movies/mood', movieController.moodMovies(mood));
 
 app.use(express.static(path.join(__dirname, '../client')));
 
