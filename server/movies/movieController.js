@@ -28,17 +28,17 @@ module.exports = {
 
   toggleSave: function(req, res, next) {
     console.log('toggleSave req.body: ', req.body)
-    // var title = req.body.title;
-    // var year = req.body.year;
-    // var description = req.body.description;
-    // var genre = req.body.genre;
-    // var poster = req.body.poster;
-
-    var title = JSON.stringify(req.body.title);
+    var title = req.body.title;
     var year = req.body.year;
-    var description = JSON.stringify(req.body.description);
-    var genre = JSON.stringify(req.body.genre);
-    var poster = JSON.stringify(req.body.poster);
+    var description = req.body.description;
+    var genre = req.body.genre;
+    var poster = req.body.poster;
+
+    // var title = JSON.stringify(req.body.title);
+    // var year = req.body.year;
+    // var description = JSON.stringify(req.body.description);
+    // var genre = JSON.stringify(req.body.genre);
+    // var poster = JSON.stringify(req.body.poster);
 
     Movie.findOne({title: title})
       .then(function(movie) {

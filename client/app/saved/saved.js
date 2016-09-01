@@ -36,9 +36,9 @@ angular.module('roxbury.saved', [])
       url: '/server/movies'
     })
     .then(function(movies) {
-      console.log('here are the retrieved saved movies: ', movies.data);
-      $scope.data.saved.push(movies.data);
-      console.log('the scope saved movies are: ', $scope.data.saved);
+      movies.data.forEach(function(x) {
+        $scope.data.saved.push(x);
+      })
     })
   };
 
